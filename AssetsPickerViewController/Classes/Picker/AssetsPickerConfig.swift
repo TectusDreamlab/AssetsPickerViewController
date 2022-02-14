@@ -32,9 +32,6 @@ open class AssetsPickerConfig {
         PHAssetCollectionType: ((PHAssetCollection, PHFetchResult<PHAsset>) -> Bool)
     ]?
     
-    /// Not yet fully implemeted, do not set this true until it's completed.
-    open var albumIsShowMomentAlbums: Bool = false
-    
     // MARK: Fetch
     open var albumFetchOptions: [PHAssetCollectionType: PHFetchOptions]?
     
@@ -175,8 +172,7 @@ open class AssetsPickerConfig {
             options.predicate = NSPredicate(format: "mediaType = %d OR mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
             assetFetchOptions = [
                 .smartAlbum: options,
-                .album: options,
-                .moment: options
+                .album: options
             ]
         }
         
