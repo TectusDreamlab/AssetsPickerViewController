@@ -6,6 +6,8 @@
 //
 //
 
+import UIKit
+
 fileprivate let kDimmerViewKey                          = "kDimmerViewKey"
 fileprivate let kDimmerView                             = "kDimmerView"
 fileprivate let kDimmerViewRatio                        = "kDimmerViewRatio"
