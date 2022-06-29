@@ -1,0 +1,677 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E94855AC22F3D3300018A55A /* AssetsPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = E94855AA22F3D3300018A55A /* AssetsPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94855FB22F3D4020018A55A /* AssetsPickerCustomStringConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855B822F3D4020018A55A /* AssetsPickerCustomStringConfig.swift */; };
+		E94855FC22F3D4020018A55A /* AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855BA22F3D4020018A55A /* AssetsPickerViewController.swift */; };
+		E94855FD22F3D4020018A55A /* SSCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855BC22F3D4020018A55A /* SSCheckMark.swift */; };
+		E94855FE22F3D4020018A55A /* AssetsGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855BD22F3D4020018A55A /* AssetsGuideView.swift */; };
+		E94855FF22F3D4020018A55A /* AssetsPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855BE22F3D4020018A55A /* AssetsPickerConfig.swift */; };
+		E948560122F3D4020018A55A /* AssetsCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855C222F3D4020018A55A /* AssetsCropViewController.swift */; };
+		E948560222F3D4020018A55A /* UIColor+ARGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855C522F3D4020018A55A /* UIColor+ARGB.swift */; };
+		E948560322F3D4020018A55A /* UIView+Dimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855C622F3D4020018A55A /* UIView+Dimmer.swift */; };
+		E948560422F3D4020018A55A /* UIView+KVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855C722F3D4020018A55A /* UIView+KVO.swift */; };
+		E948560522F3D4020018A55A /* UIView+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855C822F3D4020018A55A /* UIView+Fade.swift */; };
+		E948560622F3D4020018A55A /* TinyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855CA22F3D4020018A55A /* TinyLog.swift */; };
+		E948560722F3D4020018A55A /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855CC22F3D4020018A55A /* AssetsManager.swift */; };
+		E948560822F3D4020018A55A /* AssetsManager+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855CD22F3D4020018A55A /* AssetsManager+Sync.swift */; };
+		E948560922F3D4020018A55A /* AssetsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855CE22F3D4020018A55A /* AssetsUtility.swift */; };
+		E948560A22F3D4020018A55A /* AssetsAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D122F3D4020018A55A /* AssetsAlbumViewController.swift */; };
+		E948560B22F3D4020018A55A /* AssetsAlbumLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D322F3D4020018A55A /* AssetsAlbumLayout.swift */; };
+		E948560C22F3D4020018A55A /* AssetsAlbumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D422F3D4020018A55A /* AssetsAlbumHeaderView.swift */; };
+		E948560D22F3D4020018A55A /* AssetsAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D522F3D4020018A55A /* AssetsAlbumCell.swift */; };
+		E948560E22F3D4020018A55A /* AssetsAlbumTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D622F3D4020018A55A /* AssetsAlbumTitleView.swift */; };
+		E948560F22F3D4020018A55A /* AssetsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855D922F3D4020018A55A /* AssetsPreviewController.swift */; };
+		E948561022F3D4020018A55A /* AssetsPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855DA22F3D4020018A55A /* AssetsPhotoViewController.swift */; };
+		E948561122F3D4020018A55A /* PanoramaIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855DC22F3D4020018A55A /* PanoramaIconView.swift */; };
+		E948561222F3D4020018A55A /* AssetsNoPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855DD22F3D4020018A55A /* AssetsNoPermissionView.swift */; };
+		E948561322F3D4020018A55A /* AssetsPhotoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855DE22F3D4020018A55A /* AssetsPhotoLayout.swift */; };
+		E948561422F3D4020018A55A /* AssetsPhotoCellOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855DF22F3D4020018A55A /* AssetsPhotoCellOverlay.swift */; };
+		E948561522F3D4020018A55A /* AssetsPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E022F3D4020018A55A /* AssetsPhotoCell.swift */; };
+		E948561622F3D4020018A55A /* AssetsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E122F3D4020018A55A /* AssetsFooterView.swift */; };
+		E948561722F3D4020018A55A /* AssetsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E222F3D4020018A55A /* AssetsEmptyView.swift */; };
+		E948561822F3D4020018A55A /* NumberFormatter+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E422F3D4020018A55A /* NumberFormatter+AssetsPickerViewController.swift */; };
+		E948561922F3D4020018A55A /* UIScreen+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E522F3D4020018A55A /* UIScreen+AssetsPickerViewController.swift */; };
+		E948561A22F3D4020018A55A /* UIFont+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E622F3D4020018A55A /* UIFont+AssetsPickerViewController.swift */; };
+		E948561B22F3D4020018A55A /* String+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E722F3D4020018A55A /* String+AssetsPickerViewController.swift */; };
+		E948561C22F3D4020018A55A /* Bundle+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E822F3D4020018A55A /* Bundle+AssetsPickerViewController.swift */; };
+		E948561D22F3D4020018A55A /* Device+AssetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94855E922F3D4020018A55A /* Device+AssetsPickerViewController.swift */; };
+		E948561E22F3D4020018A55A /* AssetsPickerViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = E94855EB22F3D4020018A55A /* AssetsPickerViewController.strings */; };
+		E99FB03A22F4023400B15CC9 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99FB03922F4023400B15CC9 /* UIView+Layout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E94855A722F3D3300018A55A /* AssetsPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssetsPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94855AA22F3D3300018A55A /* AssetsPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetsPicker.h; sourceTree = "<group>"; };
+		E94855AB22F3D3300018A55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E94855B822F3D4020018A55A /* AssetsPickerCustomStringConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerCustomStringConfig.swift; sourceTree = "<group>"; };
+		E94855BA22F3D4020018A55A /* AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerViewController.swift; sourceTree = "<group>"; };
+		E94855BC22F3D4020018A55A /* SSCheckMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSCheckMark.swift; sourceTree = "<group>"; };
+		E94855BD22F3D4020018A55A /* AssetsGuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsGuideView.swift; sourceTree = "<group>"; };
+		E94855BE22F3D4020018A55A /* AssetsPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPickerConfig.swift; sourceTree = "<group>"; };
+		E94855C222F3D4020018A55A /* AssetsCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsCropViewController.swift; sourceTree = "<group>"; };
+		E94855C522F3D4020018A55A /* UIColor+ARGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ARGB.swift"; sourceTree = "<group>"; };
+		E94855C622F3D4020018A55A /* UIView+Dimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Dimmer.swift"; sourceTree = "<group>"; };
+		E94855C722F3D4020018A55A /* UIView+KVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+KVO.swift"; sourceTree = "<group>"; };
+		E94855C822F3D4020018A55A /* UIView+Fade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Fade.swift"; sourceTree = "<group>"; };
+		E94855CA22F3D4020018A55A /* TinyLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyLog.swift; sourceTree = "<group>"; };
+		E94855CC22F3D4020018A55A /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		E94855CD22F3D4020018A55A /* AssetsManager+Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AssetsManager+Sync.swift"; sourceTree = "<group>"; };
+		E94855CE22F3D4020018A55A /* AssetsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsUtility.swift; sourceTree = "<group>"; };
+		E94855D122F3D4020018A55A /* AssetsAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsAlbumViewController.swift; sourceTree = "<group>"; };
+		E94855D322F3D4020018A55A /* AssetsAlbumLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsAlbumLayout.swift; sourceTree = "<group>"; };
+		E94855D422F3D4020018A55A /* AssetsAlbumHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsAlbumHeaderView.swift; sourceTree = "<group>"; };
+		E94855D522F3D4020018A55A /* AssetsAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsAlbumCell.swift; sourceTree = "<group>"; };
+		E94855D622F3D4020018A55A /* AssetsAlbumTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsAlbumTitleView.swift; sourceTree = "<group>"; };
+		E94855D922F3D4020018A55A /* AssetsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPreviewController.swift; sourceTree = "<group>"; };
+		E94855DA22F3D4020018A55A /* AssetsPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPhotoViewController.swift; sourceTree = "<group>"; };
+		E94855DC22F3D4020018A55A /* PanoramaIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaIconView.swift; sourceTree = "<group>"; };
+		E94855DD22F3D4020018A55A /* AssetsNoPermissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsNoPermissionView.swift; sourceTree = "<group>"; };
+		E94855DE22F3D4020018A55A /* AssetsPhotoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPhotoLayout.swift; sourceTree = "<group>"; };
+		E94855DF22F3D4020018A55A /* AssetsPhotoCellOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPhotoCellOverlay.swift; sourceTree = "<group>"; };
+		E94855E022F3D4020018A55A /* AssetsPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPhotoCell.swift; sourceTree = "<group>"; };
+		E94855E122F3D4020018A55A /* AssetsFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsFooterView.swift; sourceTree = "<group>"; };
+		E94855E222F3D4020018A55A /* AssetsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsEmptyView.swift; sourceTree = "<group>"; };
+		E94855E422F3D4020018A55A /* NumberFormatter+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855E522F3D4020018A55A /* UIScreen+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855E622F3D4020018A55A /* UIFont+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855E722F3D4020018A55A /* String+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855E822F3D4020018A55A /* Bundle+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855E922F3D4020018A55A /* Device+AssetsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+AssetsPickerViewController.swift"; sourceTree = "<group>"; };
+		E94855EC22F3D4020018A55A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855ED22F3D4020018A55A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855EE22F3D4020018A55A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AssetsPickerViewController.strings"; sourceTree = "<group>"; };
+		E94855EF22F3D4020018A55A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F022F3D4020018A55A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F122F3D4020018A55A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F322F3D4020018A55A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F422F3D4020018A55A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AssetsPickerViewController.strings"; sourceTree = "<group>"; };
+		E94855F522F3D4020018A55A /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/AssetsPickerViewController.strings"; sourceTree = "<group>"; };
+		E94855F622F3D4020018A55A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F722F3D4020018A55A /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/AssetsPickerViewController.strings"; sourceTree = "<group>"; };
+		E94855F822F3D4020018A55A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855F922F3D4020018A55A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E94855FA22F3D4020018A55A /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/AssetsPickerViewController.strings; sourceTree = "<group>"; };
+		E99FB03922F4023400B15CC9 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E94855A422F3D3300018A55A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E948559D22F3D3300018A55A = {
+			isa = PBXGroup;
+			children = (
+				E94855A922F3D3300018A55A /* AssetsPicker */,
+				E94855A822F3D3300018A55A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E94855A822F3D3300018A55A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E94855A722F3D3300018A55A /* AssetsPicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E94855A922F3D3300018A55A /* AssetsPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E94855EA22F3D4020018A55A /* Assets */,
+				E94855B622F3D4020018A55A /* Classes */,
+				E94855AA22F3D3300018A55A /* AssetsPicker.h */,
+				E94855AB22F3D3300018A55A /* Info.plist */,
+			);
+			name = AssetsPicker;
+			path = AssetsPickerViewController;
+			sourceTree = "<group>";
+		};
+		E94855B622F3D4020018A55A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E94855B722F3D4020018A55A /* Picker */,
+				E94855C022F3D4020018A55A /* Crop */,
+				E94855C322F3D4020018A55A /* Library */,
+				E94855CB22F3D4020018A55A /* Assets */,
+				E94855CF22F3D4020018A55A /* Album */,
+				E94855D722F3D4020018A55A /* Photo */,
+				E94855E322F3D4020018A55A /* Utility */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E94855B722F3D4020018A55A /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				E94855B822F3D4020018A55A /* AssetsPickerCustomStringConfig.swift */,
+				E94855B922F3D4020018A55A /* Controller */,
+				E94855BB22F3D4020018A55A /* View */,
+				E94855BE22F3D4020018A55A /* AssetsPickerConfig.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		E94855B922F3D4020018A55A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E94855BA22F3D4020018A55A /* AssetsPickerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E94855BB22F3D4020018A55A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E94855BC22F3D4020018A55A /* SSCheckMark.swift */,
+				E94855BD22F3D4020018A55A /* AssetsGuideView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E94855C022F3D4020018A55A /* Crop */ = {
+			isa = PBXGroup;
+			children = (
+				E94855C122F3D4020018A55A /* Controller */,
+			);
+			path = Crop;
+			sourceTree = "<group>";
+		};
+		E94855C122F3D4020018A55A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E94855C222F3D4020018A55A /* AssetsCropViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E94855C322F3D4020018A55A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E94855C422F3D4020018A55A /* Extensions */,
+				E94855C922F3D4020018A55A /* TinyLog */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E94855C422F3D4020018A55A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E94855C522F3D4020018A55A /* UIColor+ARGB.swift */,
+				E94855C622F3D4020018A55A /* UIView+Dimmer.swift */,
+				E94855C722F3D4020018A55A /* UIView+KVO.swift */,
+				E94855C822F3D4020018A55A /* UIView+Fade.swift */,
+				E99FB03922F4023400B15CC9 /* UIView+Layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E94855C922F3D4020018A55A /* TinyLog */ = {
+			isa = PBXGroup;
+			children = (
+				E94855CA22F3D4020018A55A /* TinyLog.swift */,
+			);
+			path = TinyLog;
+			sourceTree = "<group>";
+		};
+		E94855CB22F3D4020018A55A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E94855CC22F3D4020018A55A /* AssetsManager.swift */,
+				E94855CD22F3D4020018A55A /* AssetsManager+Sync.swift */,
+				E94855CE22F3D4020018A55A /* AssetsUtility.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E94855CF22F3D4020018A55A /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				E94855D022F3D4020018A55A /* Controller */,
+				E94855D222F3D4020018A55A /* View */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		E94855D022F3D4020018A55A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E94855D122F3D4020018A55A /* AssetsAlbumViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E94855D222F3D4020018A55A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E94855D322F3D4020018A55A /* AssetsAlbumLayout.swift */,
+				E94855D422F3D4020018A55A /* AssetsAlbumHeaderView.swift */,
+				E94855D522F3D4020018A55A /* AssetsAlbumCell.swift */,
+				E94855D622F3D4020018A55A /* AssetsAlbumTitleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E94855D722F3D4020018A55A /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E94855D822F3D4020018A55A /* Controller */,
+				E94855DB22F3D4020018A55A /* View */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		E94855D822F3D4020018A55A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E94855D922F3D4020018A55A /* AssetsPreviewController.swift */,
+				E94855DA22F3D4020018A55A /* AssetsPhotoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E94855DB22F3D4020018A55A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E94855DC22F3D4020018A55A /* PanoramaIconView.swift */,
+				E94855DD22F3D4020018A55A /* AssetsNoPermissionView.swift */,
+				E94855DE22F3D4020018A55A /* AssetsPhotoLayout.swift */,
+				E94855DF22F3D4020018A55A /* AssetsPhotoCellOverlay.swift */,
+				E94855E022F3D4020018A55A /* AssetsPhotoCell.swift */,
+				E94855E122F3D4020018A55A /* AssetsFooterView.swift */,
+				E94855E222F3D4020018A55A /* AssetsEmptyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E94855E322F3D4020018A55A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E94855E422F3D4020018A55A /* NumberFormatter+AssetsPickerViewController.swift */,
+				E94855E522F3D4020018A55A /* UIScreen+AssetsPickerViewController.swift */,
+				E94855E622F3D4020018A55A /* UIFont+AssetsPickerViewController.swift */,
+				E94855E722F3D4020018A55A /* String+AssetsPickerViewController.swift */,
+				E94855E822F3D4020018A55A /* Bundle+AssetsPickerViewController.swift */,
+				E94855E922F3D4020018A55A /* Device+AssetsPickerViewController.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		E94855EA22F3D4020018A55A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E94855EB22F3D4020018A55A /* AssetsPickerViewController.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E94855A222F3D3300018A55A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94855AC22F3D3300018A55A /* AssetsPicker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E94855A622F3D3300018A55A /* AssetsPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94855AF22F3D3300018A55A /* Build configuration list for PBXNativeTarget "AssetsPicker" */;
+			buildPhases = (
+				E94855A222F3D3300018A55A /* Headers */,
+				E94855A322F3D3300018A55A /* Sources */,
+				E94855A422F3D3300018A55A /* Frameworks */,
+				E94855A522F3D3300018A55A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AssetsPicker;
+			productName = AssetsPicker;
+			productReference = E94855A722F3D3300018A55A /* AssetsPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E948559E22F3D3300018A55A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					E94855A622F3D3300018A55A = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = E94855A122F3D3300018A55A /* Build configuration list for PBXProject "AssetsPicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				ar,
+				"zh-Hans",
+				ja,
+				es,
+				ko,
+				"zh-Hant",
+				"hi-IN",
+				tr,
+				"es-MX",
+				ru,
+				fr,
+				id,
+			);
+			mainGroup = E948559D22F3D3300018A55A;
+			productRefGroup = E94855A822F3D3300018A55A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E94855A622F3D3300018A55A /* AssetsPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E94855A522F3D3300018A55A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E948561E22F3D4020018A55A /* AssetsPickerViewController.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E94855A322F3D3300018A55A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E948560822F3D4020018A55A /* AssetsManager+Sync.swift in Sources */,
+				E948561022F3D4020018A55A /* AssetsPhotoViewController.swift in Sources */,
+				E948560622F3D4020018A55A /* TinyLog.swift in Sources */,
+				E948560322F3D4020018A55A /* UIView+Dimmer.swift in Sources */,
+				E948560C22F3D4020018A55A /* AssetsAlbumHeaderView.swift in Sources */,
+				E948561722F3D4020018A55A /* AssetsEmptyView.swift in Sources */,
+				E94855FE22F3D4020018A55A /* AssetsGuideView.swift in Sources */,
+				E948561A22F3D4020018A55A /* UIFont+AssetsPickerViewController.swift in Sources */,
+				E948560B22F3D4020018A55A /* AssetsAlbumLayout.swift in Sources */,
+				E948561D22F3D4020018A55A /* Device+AssetsPickerViewController.swift in Sources */,
+				E948561222F3D4020018A55A /* AssetsNoPermissionView.swift in Sources */,
+				E948560422F3D4020018A55A /* UIView+KVO.swift in Sources */,
+				E948560122F3D4020018A55A /* AssetsCropViewController.swift in Sources */,
+				E94855FF22F3D4020018A55A /* AssetsPickerConfig.swift in Sources */,
+				E948561C22F3D4020018A55A /* Bundle+AssetsPickerViewController.swift in Sources */,
+				E948561622F3D4020018A55A /* AssetsFooterView.swift in Sources */,
+				E948560F22F3D4020018A55A /* AssetsPreviewController.swift in Sources */,
+				E948560222F3D4020018A55A /* UIColor+ARGB.swift in Sources */,
+				E94855FC22F3D4020018A55A /* AssetsPickerViewController.swift in Sources */,
+				E99FB03A22F4023400B15CC9 /* UIView+Layout.swift in Sources */,
+				E948560722F3D4020018A55A /* AssetsManager.swift in Sources */,
+				E948561122F3D4020018A55A /* PanoramaIconView.swift in Sources */,
+				E948561822F3D4020018A55A /* NumberFormatter+AssetsPickerViewController.swift in Sources */,
+				E948561B22F3D4020018A55A /* String+AssetsPickerViewController.swift in Sources */,
+				E948561922F3D4020018A55A /* UIScreen+AssetsPickerViewController.swift in Sources */,
+				E948560D22F3D4020018A55A /* AssetsAlbumCell.swift in Sources */,
+				E948561422F3D4020018A55A /* AssetsPhotoCellOverlay.swift in Sources */,
+				E94855FB22F3D4020018A55A /* AssetsPickerCustomStringConfig.swift in Sources */,
+				E948560922F3D4020018A55A /* AssetsUtility.swift in Sources */,
+				E948560522F3D4020018A55A /* UIView+Fade.swift in Sources */,
+				E948561522F3D4020018A55A /* AssetsPhotoCell.swift in Sources */,
+				E94855FD22F3D4020018A55A /* SSCheckMark.swift in Sources */,
+				E948561322F3D4020018A55A /* AssetsPhotoLayout.swift in Sources */,
+				E948560E22F3D4020018A55A /* AssetsAlbumTitleView.swift in Sources */,
+				E948560A22F3D4020018A55A /* AssetsAlbumViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E94855EB22F3D4020018A55A /* AssetsPickerViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E94855EC22F3D4020018A55A /* de */,
+				E94855ED22F3D4020018A55A /* ar */,
+				E94855EE22F3D4020018A55A /* zh-Hans */,
+				E94855EF22F3D4020018A55A /* ja */,
+				E94855F022F3D4020018A55A /* en */,
+				E94855F122F3D4020018A55A /* es */,
+				E94855F322F3D4020018A55A /* ko */,
+				E94855F422F3D4020018A55A /* zh-Hant */,
+				E94855F522F3D4020018A55A /* hi-IN */,
+				E94855F622F3D4020018A55A /* tr */,
+				E94855F722F3D4020018A55A /* es-MX */,
+				E94855F822F3D4020018A55A /* ru */,
+				E94855F922F3D4020018A55A /* fr */,
+				E94855FA22F3D4020018A55A /* id */,
+			);
+			name = AssetsPickerViewController.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E94855AD22F3D3300018A55A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E94855AE22F3D3300018A55A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E94855B022F3D3300018A55A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/AssetsPickerViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.DragonCherry.AssetsPicker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E94855B122F3D3300018A55A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/AssetsPickerViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.DragonCherry.AssetsPicker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E94855A122F3D3300018A55A /* Build configuration list for PBXProject "AssetsPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94855AD22F3D3300018A55A /* Debug */,
+				E94855AE22F3D3300018A55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94855AF22F3D3300018A55A /* Build configuration list for PBXNativeTarget "AssetsPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E94855B022F3D3300018A55A /* Debug */,
+				E94855B122F3D3300018A55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E948559E22F3D3300018A55A /* Project object */;
+}

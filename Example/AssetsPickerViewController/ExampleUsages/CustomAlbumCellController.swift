@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import AssetsPickerViewController
+import SnapKit
 
 private let imageSize = CGSize(width: 80, height: 80)
 

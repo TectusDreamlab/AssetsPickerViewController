@@ -30,9 +30,7 @@ open class AssetsPhotoFooterView: UICollectionReusableView {
     
     private func commonInit() {
         addSubview(countLabel)
-        countLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        countLabel.fillToSuperview()
     }
     
     open func set(imageCount: Int, videoCount: Int) {

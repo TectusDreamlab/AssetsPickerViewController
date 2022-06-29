@@ -123,14 +123,10 @@ open class AssetsPreviewController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+
+        imageView.fillToSuperview()
         if #available(iOS 9.1, *) {
-            livePhotoView.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
-            }
+            livePhotoView.fillToSuperview()
         }
     }
     

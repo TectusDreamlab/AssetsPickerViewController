@@ -90,25 +90,25 @@ open class AssetsAlbumCell: UICollectionViewCell, AssetsAlbumCellProtocol {
         contentView.addSubview(titleLabel)
         contentView.addSubview(countLabel)
         
-        imageView.snp.makeConstraints { (make) in
-            make.height.equalTo(imageView.snp.width)
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        
-        titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.bottom).offset(8)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.height.equalTo(titleLabel.font.pointSize + 2)
-        }
+        imageView.anchor(
+            top: contentView.topAnchor,
+            leading: contentView.leadingAnchor,
+            trailing: contentView.trailingAnchor
+        )
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
 
-        countLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(2)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.height.equalTo(countLabel.font.pointSize + 2)
-        }
+        titleLabel.anchor(
+            leading: contentView.leadingAnchor,
+            trailing: contentView.trailingAnchor,
+            heightConstant: titleLabel.font.pointSize + 2
+        )
+        titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
+
+        countLabel.anchor(
+            leading: contentView.leadingAnchor,
+            trailing: contentView.trailingAnchor,
+            heightConstant: countLabel.font.pointSize + 2
+        )
+        countLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2).isActive = true
     }
 }

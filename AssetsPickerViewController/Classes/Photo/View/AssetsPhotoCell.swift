@@ -99,26 +99,27 @@ open class AssetsPhotoCell: UICollectionViewCell, AssetsPhotoCellProtocol {
         contentView.addSubview(panoramaIconView)
         contentView.addSubview(overlay)
         
-        imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        imageView.fillToSuperview()
+
+        durationLabel.anchor(
+            bottom: contentView.bottomAnchor,
+            leading: contentView.leadingAnchor,
+            trailing: contentView.trailingAnchor,
+            leadingConstant: 8,
+            trailingConstant: 8,
+            heightConstant: durationLabel.font.pointSize + 10
+        )
         
-        durationLabel.snp.makeConstraints { (make) in
-            make.height.equalTo(durationLabel.font.pointSize + 10)
-            make.leading.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().inset(8)
-            make.bottom.equalToSuperview()
-        }
+        panoramaIconView.anchor(
+            bottom: contentView.bottomAnchor,
+            trailing: contentView.trailingAnchor,
+            bottomConstant: 10,
+            trailingConstant: 6.5,
+            widthConstant: 14,
+            heightConstant: 7
+        )
         
-        panoramaIconView.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 14, height: 7))
-            make.trailing.equalToSuperview().inset(6.5)
-            make.bottom.equalToSuperview().inset(10)
-        }
-        
-        overlay.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        overlay.fillToSuperview()
     }
     
     open override func layoutSubviews() {

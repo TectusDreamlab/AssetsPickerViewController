@@ -36,9 +36,4 @@ Fully customizable UI.
   s.resource_bundles = {
     'AssetsPickerViewController' => ['AssetsPickerViewController/Assets/*.*']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SnapKit'
-  s.dependency 'Device'
 end

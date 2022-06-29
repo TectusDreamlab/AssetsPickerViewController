@@ -6,8 +6,6 @@
 //
 //
 
-import SnapKit
-
 fileprivate let kDimmerViewKey                          = "kDimmerViewKey"
 fileprivate let kDimmerView                             = "kDimmerView"
 fileprivate let kDimmerViewRatio                        = "kDimmerViewRatio"
@@ -110,7 +108,7 @@ extension UIView {
             } else {
                 addSubview(dimmer)
             }
-            dimmer.snp.makeConstraints { $0.edges.equalToSuperview() }
+            dimmer.fillToSuperview()
             dimmerView = dimmer
         }
     }
@@ -145,9 +143,9 @@ extension UIView {
             } else {
                 addSubview(dimmerActivity)
             }
-            dimmerActivity.snp.makeConstraints { (make) in
-                make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().multipliedBy(verticalRatio)
+            if let superview = dimmerActivity.superview {
+                dimmerActivity.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+                dimmerActivity.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
             }
             dimmerActivity.startAnimating()
             dimmerActivityView = dimmerActivity

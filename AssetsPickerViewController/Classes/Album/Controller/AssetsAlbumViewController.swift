@@ -94,9 +94,7 @@ open class AssetsAlbumViewController: UIViewController {
         setupCommon()
         setupBarButtonItems()
         
-        collectionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        collectionView.fillToSuperview()
         
         AssetsManager.shared.authorize(completion: { [weak self] isAuthorized in
             if isAuthorized {

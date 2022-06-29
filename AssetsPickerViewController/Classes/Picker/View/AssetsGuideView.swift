@@ -34,12 +34,14 @@ open class AssetsGuideView: UIView {
     func commonInit() {
         backgroundColor = .white
         addSubview(messageLabel)
-        messageLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview().inset(15)
-            make.bottom.equalToSuperview()
-            make.trailing.equalToSuperview().inset(15)
-        }
+        messageLabel.anchor(
+            top: superview?.topAnchor,
+            bottom: superview?.bottomAnchor,
+            leading: superview?.leadingAnchor,
+            trailing: superview?.trailingAnchor,
+            leadingConstant: 15,
+            trailingConstant: 15
+        )
     }
     
     open func set(title: String, message: String) {

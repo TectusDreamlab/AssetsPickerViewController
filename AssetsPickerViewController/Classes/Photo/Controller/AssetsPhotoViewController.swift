@@ -9,8 +9,6 @@
 import UIKit
 import Photos
 import PhotosUI
-import Device
-import SnapKit
 
 // MARK: - AssetsPhotoViewController
 open class AssetsPhotoViewController: UIViewController {
@@ -61,9 +59,6 @@ open class AssetsPhotoViewController: UIViewController {
     fileprivate var didSetInitialPosition: Bool = false
     
     fileprivate var isPortrait: Bool = true
-    
-    var leadingConstraint: LayoutConstraint?
-    var trailingConstraint: LayoutConstraint?
     
     fileprivate lazy var collectionView: UICollectionView = {
         
@@ -183,8 +178,6 @@ open class AssetsPhotoViewController: UIViewController {
     @available(iOS 11.0, *)
     override open func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
-        leadingConstraint?.constant = view.safeAreaInsets.left
-        trailingConstraint?.constant = -view.safeAreaInsets.right
         updateLayout(layout: collectionView.collectionViewLayout)
         logi("\(view.safeAreaInsets)")
     }
@@ -247,27 +240,26 @@ extension AssetsPhotoViewController {
     }
     
     func setupCollectionView() {
-        
-        collectionView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            
+        if let superview = collectionView.superview {
+            let leadingAnchor, trailingAnchor: NSLayoutXAxisAnchor
             if #available(iOS 11.0, *) {
-                leadingConstraint = make.leading.equalToSuperview().inset(view.safeAreaInsets.left).constraint.layoutConstraints.first
-                trailingConstraint = make.trailing.equalToSuperview().inset(view.safeAreaInsets.right).constraint.layoutConstraints.first
+                leadingAnchor = superview.safeAreaLayoutGuide.leadingAnchor
+                trailingAnchor = superview.safeAreaLayoutGuide.trailingAnchor
             } else {
-                leadingConstraint = make.leading.equalToSuperview().constraint.layoutConstraints.first
-                trailingConstraint = make.trailing.equalToSuperview().constraint.layoutConstraints.first
+                leadingAnchor = superview.leadingAnchor
+                trailingAnchor = superview.trailingAnchor
             }
-            make.bottom.equalToSuperview()
+            collectionView.anchor(
+                top: superview.topAnchor,
+                bottom: superview.bottomAnchor,
+                leading: leadingAnchor,
+                trailing: trailingAnchor
+            )
         }
+
+        emptyView.fillToSuperview()
         
-        emptyView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        
-        noPermissionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        noPermissionView.fillToSuperview()
     }
     
     func setupAssets() {
@@ -720,14 +712,30 @@ extension AssetsPhotoViewController: AssetsAlbumViewControllerDelegate {
 // MARK: - AssetsManagerDelegate
 extension AssetsPhotoViewController: AssetsManagerDelegate {
     
+    private func shouldUpdateAssetCollectionView(oldStatus: PHAuthorizationStatus, newStatus: PHAuthorizationStatus) -> Bool {
+        if #available(iOS 14, *) {
+            if oldStatus != .limited || oldStatus != .authorized {
+                if newStatus == .limited || newStatus == .authorized {
+                    return true
+                }
+            }
+        } else {
+            if oldStatus != .authorized {
+                if newStatus == .authorized {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
     public func assetsManager(manager: AssetsManager, authorizationStatusChanged oldStatus: PHAuthorizationStatus, newStatus: PHAuthorizationStatus) {
-        if oldStatus != .authorized {
-            if newStatus == .authorized {
+        if shouldUpdateAssetCollectionView(oldStatus: oldStatus, newStatus: newStatus) {
                 updateNoPermissionView()
                 AssetsManager.shared.fetchAssets(isRefetch: true, completion: { [weak self] (_) in
                     self?.collectionView.reloadData()
                 })
-            }
+            
         } else {
             updateNoPermissionView()
         }
@@ -742,12 +750,16 @@ extension AssetsPhotoViewController: AssetsManagerDelegate {
             logw("selected album is nil.")
             return
         }
-        if albums.contains(selectedAlbum) {
-            select(album: manager.defaultAlbum ?? manager.cameraRollAlbum)
+        if albums.contains(selectedAlbum), let fallbackAlbum = manager.defaultAlbum ?? manager.cameraRollAlbum {
+            select(album: fallbackAlbum)
         }
     }
     
-    public func assetsManager(manager: AssetsManager, updatedAlbums albums: [PHAssetCollection], at indexPaths: [IndexPath]) {}
+    public func assetsManager(manager: AssetsManager, updatedAlbums albums: [PHAssetCollection], at indexPaths: [IndexPath]) {
+        AssetsManager.shared.fetchAssets(isRefetch: true) { (_) in
+            self.collectionView.reloadData()
+        }
+    }
     public func assetsManager(manager: AssetsManager, reloadedAlbum album: PHAssetCollection, at indexPath: IndexPath) {}
     
     public func assetsManager(manager: AssetsManager, insertedAssets assets: [PHAsset], at indexPaths: [IndexPath]) {

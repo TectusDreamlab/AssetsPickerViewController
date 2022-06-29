@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 // MARK: - AssetsManagerDelegate
-public protocol AssetsManagerDelegate: class {
+public protocol AssetsManagerDelegate: AnyObject {
     
     func assetsManager(manager: AssetsManager, authorizationStatusChanged oldStatus: PHAuthorizationStatus, newStatus: PHAuthorizationStatus)
     func assetsManager(manager: AssetsManager, reloadedAlbumsInSection section: Int)
@@ -52,7 +52,7 @@ open class AssetsManager: NSObject {
     internal(set) open var assetArray = [PHAsset]()
     
     fileprivate(set) open var defaultAlbum: PHAssetCollection?
-    fileprivate(set) open var cameraRollAlbum: PHAssetCollection!
+    fileprivate(set) open var cameraRollAlbum: PHAssetCollection?
     fileprivate(set) open var selectedAlbum: PHAssetCollection?
     
     fileprivate var isFetchedAlbums: Bool = false
@@ -113,10 +113,8 @@ extension AssetsManager {
     
     open func notifySubscribers(_ action: @escaping ((AssetsManagerDelegate) -> Void), condition: Bool = true) {
         if condition {
-            DispatchQueue.main.sync {
-                for subscriber in self.subscribers {
-                    action(subscriber)
-                }
+            for subscriber in subscribers {
+                action(subscriber)
             }
         }
     }
@@ -142,7 +140,8 @@ extension AssetsManager {
             PHPhotoLibrary.requestAuthorization({ (status) in
                 DispatchQueue.main.async {
                     switch status {
-                    case .authorized:
+                    case .authorized,
+                         .limited:
                         completion(true)
                     default:
                         completion(false)
@@ -381,7 +380,15 @@ extension AssetsManager {
     
     @discardableResult
     func notifyIfAuthorizationStatusChanged() -> Bool {
-        let newStatus = PHPhotoLibrary.authorizationStatus()
+        
+        var newStatus: PHAuthorizationStatus
+        
+        if #available(iOS 14, *) {
+            newStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        } else {
+            newStatus = PHPhotoLibrary.authorizationStatus()
+        }
+        
         if authorizationStatus != newStatus {
             let oldStatus = authorizationStatus
             authorizationStatus = newStatus
@@ -391,7 +398,11 @@ extension AssetsManager {
                 }
             }
         }
-        return authorizationStatus == .authorized
+        if #available(iOS 14, *) {
+            return authorizationStatus == .limited || authorizationStatus == .authorized
+        } else {
+            return authorizationStatus == .authorized
+        }
     }
     
     func isCountChanged(changeDetails: PHFetchResultChangeDetails<PHAsset>) -> Bool {
@@ -469,10 +480,13 @@ extension AssetsManager {
         if isRefetch {
             assetArray.removeAll()
         }
-        
-        // set default album
-        select(album: defaultAlbum ?? cameraRollAlbum)
-        
+
+        guard let album = defaultAlbum ?? cameraRollAlbum else {
+            completion?([])
+            return
+        }
+
+        select(album: album)
         completion?(assetArray)
     }
     

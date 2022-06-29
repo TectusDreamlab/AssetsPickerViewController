@@ -30,8 +30,6 @@ open class AssetsAlbumHeaderView: UICollectionReusableView {
     
     private func commonInit() {
         addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        titleLabel.fillToSuperview()
     }
 }

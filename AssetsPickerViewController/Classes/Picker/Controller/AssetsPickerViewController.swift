@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 // MARK: - AssetsPickerViewControllerDelegate
-@objc public protocol AssetsPickerViewControllerDelegate: class {
+@objc public protocol AssetsPickerViewControllerDelegate: AnyObject {
     @objc optional func assetsPickerDidCancel(controller: AssetsPickerViewController)
     @objc optional func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController)
     func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset])

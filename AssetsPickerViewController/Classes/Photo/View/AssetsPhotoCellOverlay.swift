@@ -47,13 +47,15 @@ open class AssetsPhotoCellOverlay: UIView {
         addSubview(countLabel)
         addSubview(checkmark)
         
-        countLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        checkmark.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 30, height: 30))
-            make.bottom.equalToSuperview().inset(1)
-            make.trailing.equalToSuperview().inset(1)
-        }
+        countLabel.fillToSuperview()
+        
+        checkmark.anchor(
+            bottom: superview?.bottomAnchor,
+            trailing: superview?.trailingAnchor,
+            bottomConstant: 1,
+            trailingConstant: 1,
+            widthConstant: 30,
+            heightConstant: 30
+        )
     }
 }

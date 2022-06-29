@@ -11,7 +11,7 @@ import Photos
 // MARK: - PHPhotoLibraryChangeObserver & Sync
 extension AssetsManager: PHPhotoLibraryChangeObserver {
     
-    func synchronizeAlbums(changeInstance: PHChange) -> [IndexSet] {
+    private func synchronizeAlbums(changeInstance: PHChange) -> [IndexSet] {
         
         // updated index set
         var updatedIndexSets = [IndexSet]()
@@ -24,6 +24,7 @@ extension AssetsManager: PHPhotoLibraryChangeObserver {
             
             guard let albumsChangeDetail = changeInstance.changeDetails(for: albumsFetchResult) else { continue }
             
+            guard albumsFetchArray.count > section else { continue }
             // update albumsFetchArray
             albumsFetchArray[section] = albumsChangeDetail.fetchResultAfterChanges
             
@@ -58,9 +59,9 @@ extension AssetsManager: PHPhotoLibraryChangeObserver {
         return updatedIndexSets
     }
     
-    func synchronizeAssets(updatedAlbumIndexSets: [IndexSet], fetchMapBeforeChanges: [String: PHFetchResult<PHAsset>], changeInstance: PHChange) {
+    private func synchronizeAssets(updatedAlbumIndexSets: [IndexSet], fetchMapBeforeChanges: [String: PHFetchResult<PHAsset>], changeInstance: PHChange) {
         
-        var updatedIndexSets = updatedAlbumIndexSets
+        let updatedIndexSets = updatedAlbumIndexSets
         
         // notify changes of assets
         for (section, albums) in fetchedAlbumsArray.enumerated() {
@@ -191,13 +192,16 @@ extension AssetsManager: PHPhotoLibraryChangeObserver {
             logw("Does not have access to photo library.")
             return
         }
-        let fetchMapBeforeChanges = fetchMap
-        let updatedAlbumIndexSets = synchronizeAlbums(changeInstance: changeInstance)
-        synchronizeAssets(
-            updatedAlbumIndexSets: updatedAlbumIndexSets,
-            fetchMapBeforeChanges: fetchMapBeforeChanges,
-            changeInstance: changeInstance
-        )
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let fetchMapBeforeChanges = self.fetchMap
+            let updatedAlbumIndexSets = self.synchronizeAlbums(changeInstance: changeInstance)
+            self.synchronizeAssets(
+                updatedAlbumIndexSets: updatedAlbumIndexSets,
+                fetchMapBeforeChanges: fetchMapBeforeChanges,
+                changeInstance: changeInstance
+            )
+        }
     }
     
     public func removedIndexPaths(from newAlbums: [PHAssetCollection], oldAlbums: [PHAssetCollection], section: Int) -> (indexPaths: [IndexPath], albums: [PHAssetCollection]) {

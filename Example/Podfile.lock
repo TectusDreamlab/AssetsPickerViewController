@@ -1,16 +1,13 @@
 PODS:
-  - AssetsPickerViewController (2.6.2):
-    - Device
-    - SnapKit
-  - Device (3.1.2)
+  - AssetsPickerViewController (2.6.2)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - AssetsPickerViewController (from `../`)
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Device
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -18,10 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AssetsPickerViewController: ed908abbff9ff818c031b5c54cffa2f8efb93155
-  Device: 62242076214c30fb5760174b3601cefafa70a481
+  AssetsPickerViewController: 825ff1a77e406e45fc3267bc0587db3eebf8b099
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: ed535a80c7e9986ea173935163bbd69a1c717311
+PODFILE CHECKSUM: 99436430fecf7e3f417c5ddfb455b1f8bc732b32
 
 COCOAPODS: 1.6.1

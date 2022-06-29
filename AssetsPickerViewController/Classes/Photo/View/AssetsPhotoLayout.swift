@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Device
 
 open class AssetsPhotoLayout: UICollectionViewFlowLayout {
     

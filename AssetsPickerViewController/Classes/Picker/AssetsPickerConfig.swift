@@ -57,13 +57,13 @@ open class AssetsPickerConfig {
     open var albumCellType: AnyClass = AssetsAlbumCell.classForCoder()
     open var albumDefaultSpace: CGFloat = 20
     open var albumLineSpace: CGFloat = -1
-    public let albumPortraitDefaultColumnCount: Int = UI_USER_INTERFACE_IDIOM() == .pad ? 3 : 2
+    public let albumPortraitDefaultColumnCount: Int = UIDevice.current.userInterfaceIdiom == .pad ? 3 : 2
     open var albumPortraitColumnCount: Int?
     open var albumPortraitForcedCellWidth: CGFloat?
     open var albumPortraitForcedCellHeight: CGFloat?
     open var albumPortraitCellSize: CGSize = .zero
     
-    public let albumLandscapeDefaultColumnCount: Int = UI_USER_INTERFACE_IDIOM() == .pad ? 4 : 3
+    public let albumLandscapeDefaultColumnCount: Int = UIDevice.current.userInterfaceIdiom == .pad ? 4 : 3
     open var albumLandscapeColumnCount: Int?
     open var albumLandscapeForcedCellWidth: CGFloat?
     open var albumLandscapeForcedCellHeight: CGFloat?
@@ -98,7 +98,7 @@ open class AssetsPickerConfig {
             return _assetCacheSize
         }
     }
-    open var assetPortraitColumnCount: Int = UI_USER_INTERFACE_IDIOM() == .pad ? 5 : 4
+    open var assetPortraitColumnCount: Int = UIDevice.current.userInterfaceIdiom == .pad ? 5 : 4
     open var assetPortraitInteritemSpace: CGFloat = 1
     open var assetPortraitLineSpace: CGFloat = 1
     
