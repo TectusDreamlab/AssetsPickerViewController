@@ -6,6 +6,8 @@
 //
 //
 
+import UIKit
+
 fileprivate let kDimmerViewKey                          = "kDimmerViewKey"
 fileprivate let kDimmerView                             = "kDimmerView"
 fileprivate let kDimmerViewRatio                        = "kDimmerViewRatio"
@@ -88,7 +90,7 @@ extension UIView {
         return view
     }
     
-    fileprivate func createDimmerActivityView(style: UIActivityIndicatorView.Style = .gray) -> UIActivityIndicatorView {
+    fileprivate func createDimmerActivityView(style: UIActivityIndicatorView.Style = .medium) -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(style: style)
         return activityIndicator
     }

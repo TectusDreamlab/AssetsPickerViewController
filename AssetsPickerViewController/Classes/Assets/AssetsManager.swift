@@ -274,8 +274,6 @@ extension AssetsManager {
             return .smartAlbum
         case 1:
             return .album
-        case 2:
-            return .moment
         default:
             loge("Section number error: \(section)")
             return .album
@@ -461,12 +459,6 @@ extension AssetsManager {
             sortedAlbumsArray.append(albumEntry.sortedAlbums)
             albumsFetchArray.append(albumEntry.fetchResult)
             
-            if pickerConfig.albumIsShowMomentAlbums {
-                let momentEntry = fetchAlbums(forAlbumType: .moment)
-                fetchedAlbumsArray.append(momentEntry.fetchedAlbums)
-                sortedAlbumsArray.append(momentEntry.sortedAlbums)
-                albumsFetchArray.append(momentEntry.fetchResult)
-            }
             isFetchedAlbums = true
         }
         // notify
